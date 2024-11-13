@@ -118,10 +118,12 @@ export const searchMovies = async (query, page = 1) => {
       api_key: API_KEY,
       language: "en-US",
       query,
-      with_genres: "16",
       page,
     },
   });
+  //filter only genres 16
+  data.results = data.results.filter((movie) => movie.genre_ids.includes(16));
+
   return data;
 };
 
@@ -131,9 +133,11 @@ export const searchSeries = async (query, page = 1) => {
       api_key: API_KEY,
       language: "en-US",
       query,
-      with_genres: "16",
       page,
     },
   });
+  //filter only genres 16
+  data.results = data.results.filter((movie) => movie.genre_ids.includes(16));
+
   return data;
 };
