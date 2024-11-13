@@ -3,7 +3,6 @@ import { TMDB_BASE_URL } from "../utils/constants";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
-//'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc'
 export const getMovies = async (page = 1) => {
   const { data } = await axios.get(
     `${TMDB_BASE_URL}/discover/movie?include_adult=false&include_video=false&sort_by=popularity.desc`,
@@ -90,11 +89,13 @@ export const getMovieRecommendations = async (id) => {
     {
       params: {
         api_key: API_KEY,
-        with_genres: "16",
         language: "en-US",
       },
     },
   );
+  //filter only genres 16
+  data.results = data.results.filter((movie) => movie.genre_ids.includes(16));
+
   return data;
 };
 
@@ -104,11 +105,12 @@ export const getSeriesRecommendations = async (id) => {
     {
       params: {
         api_key: API_KEY,
-        with_genres: "16",
         language: "en-US",
       },
     },
   );
+  //filter only genres 16
+  data.results = data.results.filter((movie) => movie.genre_ids.includes(16));
   return data;
 };
 
