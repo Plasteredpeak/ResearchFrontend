@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../assets/wLogo.png";
+import Logo from "../assets/icon.svg";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
@@ -77,7 +77,7 @@ export default function Header() {
             <span className="sr-only">Your Company</span>
 
             <img
-              className="h-10 w-auto rounded-sm"
+              className="h-14 w-auto rounded-sm"
               src={Logo}
               alt=""
               onClick={() => navigate(`/home`)}
