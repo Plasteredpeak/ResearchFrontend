@@ -40,16 +40,16 @@ const MoviesView = () => {
     setLoading(true);
     let data;
     switch (type) {
-      case "popular-movies":
+      case "popular-anime-movies":
         data = await getMovies(page);
         break;
-      case "top-rated-movies":
+      case "top-rated-anime-movies":
         data = await getTopRatedMovies(page);
         break;
-      case "popular-series":
+      case "popular-anime-series":
         data = await getPopularSeries(page);
         break;
-      case "top-rated-series":
+      case "top-rated-anime-series":
         data = await getTopRatedSeries(page);
         break;
       default:

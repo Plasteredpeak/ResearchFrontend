@@ -40,10 +40,13 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <ListComponent title="Popular Movies" movies={popular} />
-          <ListComponent title="Popular Series" movies={series} />
-          <ListComponent title="Top Rated Movies" movies={topRated} />
-          <ListComponent title="Top Rated Series" movies={topRatedSeries} />
+          <ListComponent title="Popular Anime Movies" movies={popular} />
+          <ListComponent title="Popular Anime Series" movies={series} />
+          <ListComponent title="Top Rated Anime Movies" movies={topRated} />
+          <ListComponent
+            title="Top Rated Anime Series"
+            movies={topRatedSeries}
+          />
         </>
       )}
     </div>
