@@ -33,8 +33,8 @@ jobs:
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
-          VITE_TMDB_API_KEY: ${{ secrets.VITE_TMDB_API_KEY }}
+          VITE_BACKEND_URL: http://20.93.16.76:5000/api
+          VITE_TMDB_API_KEY: 4994eb47d27a3d346519e2445f8nb51f
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
